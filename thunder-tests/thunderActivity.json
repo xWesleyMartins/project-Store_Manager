@@ -5,10 +5,10 @@
     "containerId": "",
     "name": "http://localhost:3000/products",
     "url": "http://localhost:3000/products/",
-    "method": "POST",
+    "method": "GET",
     "sortNum": 0,
     "created": "2022-11-05T13:56:03.050Z",
-    "modified": "2022-11-05T20:04:32.162Z",
+    "modified": "2022-11-05T21:12:23.491Z",
     "headers": [],
     "params": [],
     "body": {
