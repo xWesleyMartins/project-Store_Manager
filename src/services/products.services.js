@@ -10,4 +10,10 @@ const findById = async (id) => {
   return resultId;
 };
 
-module.exports = { findAll, findById };
+const createNewProducts = async (name) => {
+  const id = await productsModel.createNewProducts(name);
+  const result = { id, name };
+  return result;
+};
+
+module.exports = { findAll, findById, createNewProducts };
