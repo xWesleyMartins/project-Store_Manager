@@ -9,9 +9,7 @@ const findAllSales = async (req, res) => {
 const findByIdSales = async (req, res) => {
   const { id } = req.params;
   const resultId = await salesService.findByIdSales(Number(id));
-  // console.log(resultId, 'x');
   if (!resultId.length) {
-    // console.log(resultId, 'xx');
     return res.status(404).json({
       message: 'Sale not found',
     });
@@ -34,5 +32,16 @@ const createNewSales = async (req, res) => {
   const result = await salesService.createNewSales(name);
   return res.status(201).json(result);
 };
+const deleteSales = async (req, res) => {
+  const { id } = req.params;
+  const resultId = await salesService.findByIdSales(Number(id));
+  if (!resultId.length) {
+    return res.status(404).json({
+      message: 'Sale not found',
+    });
+  }
+  const delByIdResult = await salesService.deleteSales(id);
+  return res.status(204).json(delByIdResult);
+};
 
-module.exports = { findAllSales, findByIdSales, createNewSales };
+module.exports = { findAllSales, findByIdSales, createNewSales, deleteSales };

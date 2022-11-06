@@ -16,5 +16,10 @@ const createNewSales = async (name) => {
   const result = { id, name };
   return result;
 };
+const deleteSales = async (id) => {
+  await salesModel.deleteSales(id);
+  const result = await salesModel.findByIdSales(id);
+  return result;
+};
 
-module.exports = { findAllSales, findByIdSales, createNewSales };
+module.exports = { findAllSales, findByIdSales, createNewSales, deleteSales };

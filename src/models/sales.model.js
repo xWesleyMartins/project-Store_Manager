@@ -20,7 +20,6 @@ const findByIdSales = async (id) => {
     WHERE sp.sale_id = ?
     ORDER BY sale_id, sp.product_id`, [id],
   );
-  console.log(salesResult);
   return camelize(salesResult);
 };
 
@@ -29,4 +28,10 @@ const createNewSales = async (name) => {
   return insertId;
 };
 
-module.exports = { findAllSales, findByIdSales, createNewSales };
+const deleteSales = async (id) => {
+  const deleteById = await connection
+    .execute('DELETE FROM sales WHERE id = ?', [id]);
+  return deleteById;
+};
+
+module.exports = { findAllSales, findByIdSales, createNewSales, deleteSales };
