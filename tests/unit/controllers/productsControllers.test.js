@@ -9,8 +9,8 @@ const { expect } = require('chai');
 
 chai.use(sinonChai);
 
-describe('testando camada Controller', () => {
-  it('Verificando findAll da controller', async () => { 
+describe('testando camada Controller', function() {
+  it('Verificando findAll da controller', async function() { 
     const res = {}
     const req = {}
 
@@ -24,7 +24,7 @@ describe('testando camada Controller', () => {
     expect(res.json).to.have.been.calledWith(mockAllProducts);
   });
 
-  it('Verificando findAll da controller', async () => {
+  it.only('Verificando findAll da controller', async function() {
     const res = {}
     const req = { params: {id:3}}
 
