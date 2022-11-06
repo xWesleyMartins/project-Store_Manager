@@ -21,4 +21,11 @@ const updateProduct = async (name, id) => {
     .execute('UPDATE products SET name = ? WHERE id = ?', [name, id]);
   return updateResult;
 };
-module.exports = { findById, findAll, createNewProducts, updateProduct };
+
+const deleteProduct = async (id) => {
+  const deleteById = await connection
+    .execute('DELETE FROM products WHERE id = ?', [id]);
+  return deleteById;
+};
+
+module.exports = { findById, findAll, createNewProducts, updateProduct, deleteProduct };

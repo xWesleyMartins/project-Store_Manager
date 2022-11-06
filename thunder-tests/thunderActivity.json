@@ -4,16 +4,16 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000/products",
-    "url": "http://localhost:3000/sales/",
-    "method": "PUT",
+    "url": "http://localhost:3000/products/4",
+    "method": "DELETE",
     "sortNum": 0,
     "created": "2022-11-05T13:56:03.050Z",
-    "modified": "2022-11-06T18:30:35.028Z",
+    "modified": "2022-11-06T19:54:30.947Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\r\n  \"id\": 1,\r\n  \"name\": \"Martelo do Batman\"\r\n}",
+      "raw": "{\n  \"id\": 7,\n  \"name\": \"machado vinking\"\n}",
       "form": []
     },
     "tests": []
