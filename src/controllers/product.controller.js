@@ -60,10 +60,10 @@ const deleteProduct = async (req, res) => {
 };
 const findBySearch = async (req, res) => {
   const { q } = req.query;
-  console.log(q);
   const result = await productsService.findBySearch(q);
   return res.status(200).json(result.message);
 };
+
 module.exports = {
   findAll,
   findById,

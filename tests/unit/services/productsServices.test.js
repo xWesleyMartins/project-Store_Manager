@@ -2,8 +2,8 @@ const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 
-const { productsModel } = require('../../../src/models/products.model');
-const { productsService } = require('../../../src/services/products.services');
+const productsModel = require('../../../src/models/products.model');
+const productsService = require('../../../src/services/products.services');
 const { expect } = require('chai');
 chai.use(sinonChai);
 const { mockAllProducts } = require('../mocks/mockAllProducts');
@@ -18,7 +18,7 @@ describe('testando camada Services', function() {
     expect(result).to.be.deep.equal(mockAllProducts);
 
   });
-  it.only('Verifica se ao passar um "id" é retornado o valor correspondente ao id passado.', async function() {
+  it('Verifica se ao passar um "id" é retornado o valor correspondente ao id passado.', async function() {
     sinon.stub(productsModel, 'findById').resolves(mockAllProducts);
     await productsService.findById(3);
 
