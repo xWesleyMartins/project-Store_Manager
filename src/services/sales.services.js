@@ -1,4 +1,3 @@
-const { object } = require('joi');
 const salesModel = require('../models/sales.model');
 // 1 ===
 const findAllSales = async () => {
