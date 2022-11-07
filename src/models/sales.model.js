@@ -34,4 +34,15 @@ const deleteSales = async (id) => {
   return deleteById;
 };
 
-module.exports = { findAllSales, findByIdSales, createNewSales, deleteSales };
+const updateSales = async (body, id) => {
+  const promisses = body.map(async ({ productId, quantity }) => {
+    const [updateResult] = await connection
+    .execute(`UPDATE sales_products SET 
+    quantity = ? WHERE sale_id = ? AND product_id = ?`, [Number(quantity), id, Number(productId)]);
+    return updateResult;
+  });
+  const tratativa = await Promise.all(promisses);
+  return tratativa;
+};
+
+module.exports = { findAllSales, findByIdSales, createNewSales, deleteSales, updateSales };

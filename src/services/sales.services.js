@@ -1,3 +1,4 @@
+const { object } = require('joi');
 const salesModel = require('../models/sales.model');
 // 1 ===
 const findAllSales = async () => {
@@ -21,5 +22,13 @@ const deleteSales = async (id) => {
   const result = await salesModel.findByIdSales(id);
   return result;
 };
-
-module.exports = { findAllSales, findByIdSales, createNewSales, deleteSales };
+const updateSales = async (body, id) => {
+  const saleValidation = await salesModel.findByIdSales(id);
+  if (!saleValidation.length) return { message: 'Sale not found' };
+  const result = await salesModel.updateSales(body, id);
+  const verifica = result.some(({ info }) => info.includes('Rows matched: 0'));
+  console.log(verifica);
+  if (!verifica) return { saleId: id, itemsUpdated: body };
+  return { message: 'Product not found' };
+};
+module.exports = { findAllSales, findByIdSales, createNewSales, deleteSales, updateSales };

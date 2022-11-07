@@ -32,8 +32,6 @@ describe('testando camada Model', function() {
   });
   it.only('Verifica se ao passar um "id" é retornado o valor correspondente ao id passado.', async function() {
     sinon.stub(connection, 'execute').resolves([[mockAllProducts]]);
-    // console.log('x', mockAllProducts);
-    // console.log('xx', productsModel.findById(3));
     const result = await productsModel.findById(3);
     expect(result).to.be.deep.equal(mockAllProducts[2])
   });

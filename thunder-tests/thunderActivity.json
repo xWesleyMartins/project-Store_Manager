@@ -4,16 +4,16 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000/products",
-    "url": "http://localhost:3000/sales/",
-    "method": "GET",
+    "url": "http://localhost:3000/sales/1",
+    "method": "PUT",
     "sortNum": 0,
     "created": "2022-11-05T13:56:03.050Z",
-    "modified": "2022-11-06T20:15:49.932Z",
+    "modified": "2022-11-07T00:54:30.653Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"id\": 7,\n  \"name\": \"machado vinking\"\n}",
+      "raw": "[\r\n  {\r\n    \"productId\": 1,\r\n    \"quantity\": 12\r\n  },\r\n  {\r\n    \"productId\": 2,\r\n    \"quantity\": 5\r\n  }\r\n]",
       "form": []
     },
     "tests": []
