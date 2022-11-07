@@ -26,7 +26,6 @@ const updateSales = async (body, id) => {
   if (!saleValidation.length) return { message: 'Sale not found' };
   const result = await salesModel.updateSales(body, id);
   const verifica = result.some(({ info }) => info.includes('Rows matched: 0'));
-  console.log(verifica);
   if (!verifica) return { saleId: id, itemsUpdated: body };
   return { message: 'Product not found' };
 };

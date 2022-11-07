@@ -50,7 +50,6 @@ const updateSales = async (req, res) => {
   const id = Number(req.params.id);
   const { body } = req;
   const { error } = salesSchema.validate(body);
-  console.log(error);
   if (error) {
     if (error.message.includes('required')) {
       return res.status(400).json({ message: error.message });
